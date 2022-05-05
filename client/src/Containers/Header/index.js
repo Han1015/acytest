@@ -14,7 +14,6 @@ export default function Header() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (!loginStatus) {
-      console.log(" dispatch(checkLoginAsync());");
       dispatch(checkLoginAsync());
     }
   }, []);

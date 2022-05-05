@@ -37,7 +37,6 @@ export default function DesktopHeader({ handleLogout }) {
               title="Login"
               className="header-content-menu-item"
               onClick={() => {
-                console.log("hello worlld");
                 navigate("/login");
               }}
             />

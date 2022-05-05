@@ -14,11 +14,7 @@ App.use(cors());
 App.use(express.json());
 App.use(express.urlencoded({ extended: true }));
 
-App.use("/", () => {
-  console.log("hello world001");
-});
 App.get("/post/analysis", async (req: Request, res: Response) => {
-  console.log("hello world");
   let url = "https://g1api.finlogix.com/v1/post/analysis?per_page=12&page=1";
   let { data } = await axios.get(url);
   res.json(data);
@@ -42,7 +38,6 @@ App.get("/me/user/info", async (req: Request, res: Response) => {
   let {
     query: { token },
   } = req;
-  console.log("body.token", token);
   const { data } = await axios.get(url(token));
   res.json(data);
 });
