@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4008";
+const BASE_URL = "";
 
 // authorization
 const login = BASE_URL + "/auth/login/email";
