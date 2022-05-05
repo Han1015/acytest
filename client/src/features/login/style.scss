@@ -1,0 +1,18 @@
+@import "../../styles/common";
+.login {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-content {
+    form {
+      width: 300px;
+    }
+  }
+  input[type="submit"] {
+    color: #fff;
+    background-color: $brandColor;
+    box-sizing: content-box;
+  }
+}

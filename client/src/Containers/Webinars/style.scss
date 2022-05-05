@@ -1,0 +1,28 @@
+@import "../../styles/colors";
+@import "../../styles/common";
+
+.webinars {
+  background-color: $bgGrayF2;
+
+  &-content {
+    @include content-max-width;
+    @include flex-center-between;
+    margin: auto;
+    flex-flow: row wrap;
+  }
+  @media screen and (max-width: $maxWidthMobile) {
+    &-content {
+      @include flex-center-center;
+      padding: 40px 25px;
+      .card {
+        flex: auto;
+      }
+    }
+  }
+  @media screen and (min-width: $minWidthDesktop) {
+    padding: 80px;
+    &-content {
+      @include flex-center-between;
+    }
+  }
+}

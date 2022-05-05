@@ -1,0 +1,24 @@
+@import "../../styles/common";
+
+.banner {
+  @include flex-center-center;
+  height: 240px;
+  flex-direction: column;
+  &-title {
+    margin-top: 80px;
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: $maxWidthMobile) {
+    padding-bottom: 40px;
+    &-description {
+      padding: 0 12px;
+    }
+  }
+  @media screen and (min-width: $minWidthDesktop) {
+    &-description {
+      padding: 0 20%;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import "../../styles/colors";
+@import "../../styles/common";
+
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  background-color: #fff;
+  &-content {
+    @include content-max-width;
+    @include flex-center-between;
+    margin: auto;
+    position: relative;
+    height: 112px;
+    &-mmenu {
+      @include flex-center-between;
+    }
+    &-menuicon {
+      padding-right: 10px;
+      margin-right: 10px;
+      border-right: 1px solid $grayD6;
+      svg {
+        height: 35px;
+      }
+    }
+    &-logo {
+      cursor: pointer;
+    }
+    &-menu {
+      @include flex-center-between;
+      flex: auto;
+      &-item {
+        margin: 0 20px;
+      }
+      &-left {
+        @include flex-center-center;
+        flex: auto;
+      }
+      &-right {
+        @include flex-center-between;
+      }
+    }
+  }
+  @media screen and (max-width: $maxWidthMobile) {
+    &-content {
+      padding: 5px 20px;
+    }
+  }
+  @media screen and (min-width: $minWidthDesktop) {
+  }
+}

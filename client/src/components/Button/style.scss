@@ -1,0 +1,16 @@
+@import "../../styles/colors";
+@import "../../styles/common";
+.btn {
+  @include flex-center-center;
+  height: 44px;
+  width: 80px;
+  border: 1px solid $brandColor;
+  border-radius: 4px;
+  background-color: #fff;
+  color: $brandColor;
+  cursor: pointer;
+  &-primary {
+    background-color: $brandColor;
+    color: #fff;
+  }
+}
