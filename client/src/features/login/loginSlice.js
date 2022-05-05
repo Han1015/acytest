@@ -32,8 +32,9 @@ export const checkLoginAsync = createAsyncThunk(
     let res = {};
     if (token) {
       res = await GET(`${userInfo}?token=${getLocalStorage("token")}`);
+      return res;
     }
-    return res;
+    return Promise.reject();
   }
 );
 export const loginSlice = createSlice({
