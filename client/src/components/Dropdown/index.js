@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowDown } from "../Arrow";
 import "./style.scss";
 
@@ -11,13 +11,25 @@ import "./style.scss";
 function Dropdown({ title, items }) {
   const [open, setOpen] = useState(false);
   const [selection, setSelection] = useState();
+  const dropDownRef = useRef();
 
   const toggle = () => setOpen(!open);
 
   const handleOnClick = (item) => setSelection(item.id);
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const handleClick = (e) => {
+    if (!dropDownRef.current.contains(e.target)) {
+      setOpen(false);
+    }
+  };
+
   return (
-    <div className="dd-wrapper">
+    <div className="dd-wrapper" ref={dropDownRef}>
       <div
         tabIndex={0}
         className="dd-header"
@@ -27,9 +39,7 @@ function Dropdown({ title, items }) {
       >
         <p className="dd-header__title">
           <span>{title}</span>
-          {/* <span style={{ marginTop: 5 }}>
-            <ArrowDown />
-          </span> */}
+          <i className="fas fa-angle-down" style={{ marginLeft: 3 }}></i>
         </p>
       </div>
       {open && (

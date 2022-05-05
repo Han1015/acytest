@@ -18,11 +18,11 @@ export default function DesktopHeader({ handleLogout }) {
       </div>
       <div className="header-content-menu">
         <div className="header-content-menu-left">
-          <Dropdown title="Why Acy" items={whyAcyItems} />
-          <Dropdown title="Products" items={whyAcyItems} />
-          <Dropdown title="Platforms" items={whyAcyItems} />
-          <Dropdown title="Education" items={whyAcyItems} />
-          <Dropdown title="Partners" items={whyAcyItems} />
+          <Dropdown title="Why Acy" items={[]} />
+          <Dropdown title="Products" items={[]} />
+          <Dropdown title="Platforms" items={[]} />
+          <Dropdown title="Education" items={[]} />
+          <Dropdown title="Partners" items={[]} />
         </div>
         <div className="header-content-menu-right">
           {loginStatus ? (

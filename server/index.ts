@@ -6,7 +6,7 @@ import {
   responseInterceptor,
 } from "http-proxy-middleware";
 
-const port = process.env.PORT || 4008;
+const port = process.env.PORT || 4000;
 const App = express();
 const BASE_URL: string = "https://g1api.finlogix.com/v1";
 
@@ -53,5 +53,5 @@ App.post("/me/user/logout", async (req: Request, res: Response) => {
 
 App.get("");
 App.listen(port, () => {
-  console.log(`server is on ${port}`);
+  console.log(`server is listening on ${port}`);
 });
