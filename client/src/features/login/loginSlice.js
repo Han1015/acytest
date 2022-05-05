@@ -59,7 +59,6 @@ export const loginSlice = createSlice({
         state.userInfo = payload;
       })
       .addCase(logoutAsync.fulfilled, (state) => {
-        console.log("asdcasdcscsdc ");
         removeLocalStorage("token");
         state.loginStatus = false;
       }),

@@ -50,6 +50,23 @@ export default function Register() {
             <p className="register-desc">{formDesc}</p>
             <form>
               <div className="form-element">
+                <label>Topic</label>
+                <select
+                  name="topic"
+                  id="topic"
+                  onChange={setFields}
+                  value={fields.topic}
+                >
+                  <option value="23/07/20 - Alistair's Favourite Chart Patterns You Can Apply to Your Trading">
+                    23/07/20 - Alistair's Favourite Chart Patterns You Can Apply
+                    to Your Trading
+                  </option>
+                  <option value="saab">Saab</option>
+                  <option value="opel">Opel</option>
+                  <option value="audi">Audi</option>
+                </select>
+              </div>
+              <div className="form-element">
                 <label>First Name</label>
                 <input
                   id="firstName"
