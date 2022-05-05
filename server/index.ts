@@ -6,7 +6,7 @@ import {
   responseInterceptor,
 } from "http-proxy-middleware";
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4008;
 const App = express();
 const BASE_URL: string = "https://g1api.finlogix.com/v1";
 
@@ -14,7 +14,11 @@ App.use(cors());
 App.use(express.json());
 App.use(express.urlencoded({ extended: true }));
 
+App.use("/", () => {
+  console.log("hello world001");
+});
 App.get("/post/analysis", async (req: Request, res: Response) => {
+  console.log("hello world");
   let url = "https://g1api.finlogix.com/v1/post/analysis?per_page=12&page=1";
   let { data } = await axios.get(url);
   res.json(data);
@@ -54,5 +58,5 @@ App.post("/me/user/logout", async (req: Request, res: Response) => {
 
 App.get("");
 App.listen(port, () => {
-  console.log(`server is listening on ${port}`);
+  console.log(`server is on ${port}`);
 });
